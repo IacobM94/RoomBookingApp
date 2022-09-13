@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using RoomBookingApp.Models;
 
 namespace RoomBookingApp.Data
 {
@@ -12,5 +13,6 @@ namespace RoomBookingApp.Data
             : base(options)
         {
         }
+        public DbSet<RoomBookingApp.Models.Room> Room { get; set; }
     }
 }

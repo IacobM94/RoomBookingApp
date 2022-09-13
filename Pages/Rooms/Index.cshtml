@@ -1,0 +1,48 @@
+﻿@page
+@model RoomBookingApp.Pages.Rooms.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Room[0].RoomName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room[0].Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Room[0].Floor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Room) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Floor)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RoomNumber">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RoomNumber">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RoomNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
