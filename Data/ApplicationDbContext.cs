@@ -14,5 +14,6 @@ namespace RoomBookingApp.Data
         {
         }
         public DbSet<RoomBookingApp.Models.Room> Room { get; set; }
+        public DbSet<RoomBookingApp.Models.Booking> Booking { get; set; }
     }
 }
