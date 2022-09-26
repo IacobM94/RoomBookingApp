@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using RoomBookingApp.Models;
 
 namespace RoomBookingApp.Pages.Rooms
 {
+    [Authorize(Roles = "Administrator")]
     public class IndexModel : PageModel
     {
         private readonly RoomBookingApp.Data.ApplicationDbContext _context;
@@ -23,7 +25,7 @@ namespace RoomBookingApp.Pages.Rooms
 
         public async Task OnGetAsync()
         {
-            Room = await _context.Room.ToListAsync();
+            Room = await _context.Rooms.ToListAsync();
         }
     }
 }

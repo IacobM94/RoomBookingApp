@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using RoomBookingApp.Models;
 
 namespace RoomBookingApp.Pages.Rooms
 {
+    [Authorize]
     public class DeleteModel : PageModel
     {
         private readonly RoomBookingApp.Data.ApplicationDbContext _context;
@@ -29,7 +31,7 @@ namespace RoomBookingApp.Pages.Rooms
                 return NotFound();
             }
 
-            Room = await _context.Room.FirstOrDefaultAsync(m => m.RoomNumber == id);
+            Room = await _context.Rooms.FirstOrDefaultAsync(m => m.RoomNumber == id);
 
             if (Room == null)
             {
@@ -45,11 +47,11 @@ namespace RoomBookingApp.Pages.Rooms
                 return NotFound();
             }
 
-            Room = await _context.Room.FindAsync(id);
+            Room = await _context.Rooms.FindAsync(id);
 
             if (Room != null)
             {
-                _context.Room.Remove(Room);
+                _context.Rooms.Remove(Room);
                 await _context.SaveChangesAsync();
             }
 

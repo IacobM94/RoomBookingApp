@@ -1,13 +1,10 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using RoomBookingApp.Data;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using RoomBookingApp.Data;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using RoomBookingApp;
 
 namespace RoomBookingApp
 {
@@ -16,16 +13,11 @@ namespace RoomBookingApp
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
+
             CreateDbIfNotExists(host);
+
             host.Run();
         }
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
 
         private static void CreateDbIfNotExists(IHost host)
         {
@@ -35,6 +27,7 @@ namespace RoomBookingApp
                 try
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
+                    //context.Database.EnsureCreated();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
@@ -45,5 +38,11 @@ namespace RoomBookingApp
             }
         }
 
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
     }
 }

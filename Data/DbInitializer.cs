@@ -2,6 +2,7 @@
 using RoomBookingApp.Models;
 using System;
 using System.Linq;
+using System.Net.Mime;
 
 namespace RoomBookingApp.Data
 {
@@ -9,8 +10,9 @@ namespace RoomBookingApp.Data
     {
         public static void Initialize(ApplicationDbContext context)
         {
+          context.Database.EnsureCreated();
             // Look for any Rooms.
-            if (context.Room.Any())
+            if (context.Rooms.Any())
             {
                 return;   // DB has been seeded
             }
@@ -26,8 +28,7 @@ namespace RoomBookingApp.Data
                 new Room{RoomName="E2.1",Capacity=50,Floor="2nd Floor"},
                 new Room{RoomName="E2.2",Capacity=50,Floor="2nd Floor"}
             };
-
-            context.Room.AddRange(Rooms);
+            context.Rooms.AddRange(Rooms);
             context.SaveChanges();
         }
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,6 +11,7 @@ using RoomBookingApp.Models;
 
 namespace RoomBookingApp.Pages.Rooms
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly RoomBookingApp.Data.ApplicationDbContext _context;
@@ -36,7 +38,7 @@ namespace RoomBookingApp.Pages.Rooms
                 return Page();
             }
 
-            _context.Room.Add(Room);
+            _context.Rooms.Add(Room);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

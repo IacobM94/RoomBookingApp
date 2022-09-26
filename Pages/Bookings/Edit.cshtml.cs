@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,6 +12,7 @@ using RoomBookingApp.Models;
 
 namespace RoomBookingApp.Pages.Bookings
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly RoomBookingApp.Data.ApplicationDbContext _context;
@@ -30,7 +32,7 @@ namespace RoomBookingApp.Pages.Bookings
                 return NotFound();
             }
 
-            Booking = await _context.Booking.FirstOrDefaultAsync(m => m.BookingID == id);
+            Booking = await _context.Bookings.FirstOrDefaultAsync(m => m.BookingID == id);
 
             if (Booking == null)
             {
@@ -71,7 +73,7 @@ namespace RoomBookingApp.Pages.Bookings
 
         private bool BookingExists(int id)
         {
-            return _context.Booking.Any(e => e.BookingID == id);
+            return _context.Bookings.Any(e => e.BookingID == id);
         }
     }
 }
