@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Hosting;
 using RoomBookingApp.Data;
 using RoomBookingApp.Models;
 
@@ -17,6 +19,7 @@ namespace RoomBookingApp.Pages.Bookings
         public CreateModel(RoomBookingApp.Data.ApplicationDbContext context)
         {
             _context = context;
+            
         }
 
         public IActionResult OnGet()
@@ -31,6 +34,7 @@ namespace RoomBookingApp.Pages.Bookings
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+
             if (!ModelState.IsValid)
             {
                 return Page();

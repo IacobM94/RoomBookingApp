@@ -23,7 +23,7 @@ namespace RoomBookingApp.Pages.Bookings
 
         public async Task OnGetAsync()
         {
-            Booking = await _context.Booking.ToListAsync();
+            Booking = await _context.Booking.Include(p => p.User).Where(a => a.User.UserName == User.Identity.Name).ToListAsync();
         }
     }
 }
