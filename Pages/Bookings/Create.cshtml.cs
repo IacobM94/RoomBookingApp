@@ -15,11 +15,13 @@ namespace RoomBookingApp.Pages.Bookings
     public class CreateModel : PageModel
     {
         private readonly RoomBookingApp.Data.ApplicationDbContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public CreateModel(RoomBookingApp.Data.ApplicationDbContext context)
+        public CreateModel(RoomBookingApp.Data.ApplicationDbContext context, UserManager<User> userManager)
         {
             _context = context;
-            
+            _userManager = userManager;
+
         }
 
         public IActionResult OnGet()
@@ -34,6 +36,8 @@ namespace RoomBookingApp.Pages.Bookings
         // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            var user = _userManager.FindByNameAsync(User.Identity.Name).Result;
+            Booking.UserID = user.Id;
 
             if (!ModelState.IsValid)
             {
