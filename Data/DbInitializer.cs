@@ -17,14 +17,14 @@ namespace RoomBookingApp.Data
 
             var Rooms = new Room[]
             {
-                new Room{RoomNumber=1,RoomName="East Wing",Capacity=50,Floor="Basement"},
-                new Room{RoomNumber=2,RoomName="North Wing",Capacity=50,Floor="Basement"},
-                new Room{RoomNumber=3,RoomName="West Wing",Capacity=50,Floor="Basement"},
-                new Room{RoomNumber=4,RoomName="South Wing",Capacity=50,Floor="Basement"},
-                new Room{RoomNumber=5,RoomName="East Wing",Capacity=50,Floor="Ground Floor"},
-                new Room{RoomNumber=6,RoomName="North Wing",Capacity=50,Floor="1st Floor"},
-                new Room{RoomNumber=7,RoomName="West Wing",Capacity=50,Floor="2nd Floor"},
-                new Room{RoomNumber=8,RoomName="South Wing",Capacity=50,Floor="3rd FLoor"},
+                new Room{RoomName="101", Capacity=2, Floor="Ground Floor"},
+                new Room{RoomName="102",Capacity=50,Floor="Ground Floor"},
+                new Room{RoomName="N1",Capacity=50,Floor="Basement"},
+                new Room{RoomName="N2",Capacity=50,Floor="Basement"},
+                new Room{RoomName="N3",Capacity=50,Floor="Ground Floor"},
+                new Room{RoomName="E1.1",Capacity=50,Floor="1st Floor"},
+                new Room{RoomName="E2.1",Capacity=50,Floor="2nd Floor"},
+                new Room{RoomName="E2.2",Capacity=50,Floor="2nd Floor"}
             };
 
             context.Room.AddRange(Rooms);

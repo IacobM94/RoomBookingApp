@@ -191,7 +191,7 @@ namespace RoomBookingApp.Data.Migrations
 
             modelBuilder.Entity("RoomBookingApp.Models.Room", b =>
                 {
-                    b.Property<int>("RoomNumber")
+                    b.Property<int>("RoomID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -205,7 +205,10 @@ namespace RoomBookingApp.Data.Migrations
                     b.Property<string>("RoomName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("RoomNumber");
+                    b.Property<int>("RoomNumber")
+                        .HasColumnType("int");
+
+                    b.HasKey("RoomID");
 
                     b.ToTable("Room");
                 });

@@ -14,9 +14,10 @@ namespace RoomBookingApp
     public class Program
     {
         public static void Main(string[] args)
-
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            CreateDbIfNotExists(host);
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -34,8 +35,7 @@ namespace RoomBookingApp
                 try
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
-                    context.Database.EnsureCreated();
-
+                    DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {
