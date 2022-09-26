@@ -13,7 +13,14 @@ namespace RoomBookingApp.Data
             : base(options)
         {
         }
-        public DbSet<RoomBookingApp.Models.Room> Room { get; set; }
-        public DbSet<RoomBookingApp.Models.Booking> Booking { get; set; }
+        public DbSet<RoomBookingApp.Models.Room> Rooms { get; set; }
+        public DbSet<RoomBookingApp.Models.Booking> Bookings { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Room>().ToTable("Room");
+            modelBuilder.Entity<Booking>().ToTable("Booking");
+        }
     }
 }

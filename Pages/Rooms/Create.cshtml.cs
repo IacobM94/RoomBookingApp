@@ -38,7 +38,7 @@ namespace RoomBookingApp.Pages.Rooms
                 return Page();
             }
 
-            _context.Room.Add(Room);
+            _context.Rooms.Add(Room);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

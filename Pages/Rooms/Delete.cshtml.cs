@@ -31,7 +31,7 @@ namespace RoomBookingApp.Pages.Rooms
                 return NotFound();
             }
 
-            Room = await _context.Room.FirstOrDefaultAsync(m => m.RoomNumber == id);
+            Room = await _context.Rooms.FirstOrDefaultAsync(m => m.RoomNumber == id);
 
             if (Room == null)
             {
@@ -47,11 +47,11 @@ namespace RoomBookingApp.Pages.Rooms
                 return NotFound();
             }
 
-            Room = await _context.Room.FindAsync(id);
+            Room = await _context.Rooms.FindAsync(id);
 
             if (Room != null)
             {
-                _context.Room.Remove(Room);
+                _context.Rooms.Remove(Room);
                 await _context.SaveChangesAsync();
             }
 

@@ -30,7 +30,7 @@ namespace RoomBookingApp.Pages.Rooms
                 return NotFound();
             }
 
-            Room = await _context.Room.FirstOrDefaultAsync(m => m.RoomNumber == id);
+            Room = await _context.Rooms.FirstOrDefaultAsync(m => m.RoomNumber == id);
 
             if (Room == null)
             {

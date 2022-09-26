@@ -25,7 +25,7 @@ namespace RoomBookingApp.Pages.Rooms
 
         public async Task OnGetAsync()
         {
-            Room = await _context.Room.ToListAsync();
+            Room = await _context.Rooms.ToListAsync();
         }
     }
 }

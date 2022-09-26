@@ -32,7 +32,7 @@ namespace RoomBookingApp.Pages.Rooms
                 return NotFound();
             }
 
-            Room = await _context.Room.FirstOrDefaultAsync(m => m.RoomNumber == id);
+            Room = await _context.Rooms.FirstOrDefaultAsync(m => m.RoomNumber == id);
 
             if (Room == null)
             {
@@ -73,7 +73,7 @@ namespace RoomBookingApp.Pages.Rooms
 
         private bool RoomExists(int id)
         {
-            return _context.Room.Any(e => e.RoomNumber == id);
+            return _context.Rooms.Any(e => e.RoomNumber == id);
         }
     }
 }
