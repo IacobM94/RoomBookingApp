@@ -9,9 +9,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">RoomBookingApp</a>
+                <a class="navbar-brand" asp-page="/Index">Room Booking</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,17 +20,21 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link" asp-page="/Index">Home</a>
                         </li>
+                        <div class="border-right"></div>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Bookings">Bookings</a>
+                            <a class="nav-link" href="/Bookings">Bookings</a>
                         </li>
+                        <div class="border-right"></div>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Rooms">Rooms</a>
+                            <a class="nav-link" href="/Rooms">Rooms</a>
                         </li>
+                        <div class="border-right"></div>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Users">Admin Portal</a>
+                            <a class="nav-link" href="/Users">Admin Portal</a>
                         </li>
+                        <div class="border-right"></div>
                     </ul>
                 </div>
             </div>
@@ -43,8 +47,8 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - Room Booking App - Lewis Beane, Michael Hunter, Mihai Iacob, Natasha Hall, Oliver Hart and Tom Gillings <br /> <a asp-area="" asp-page="/Privacy">Privacy</a>
+        <div class="container text-centers">
+            &copy; 2022<br /> Room Booking Application <br /> Created by:  Lewis Beane, Michael Hunter, Mihai Iacob, Natasha Hall, Oliver Hart and Tom Gillings <br /> <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 

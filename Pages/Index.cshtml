@@ -4,7 +4,53 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Room Booking Application</h1>
-    <p>This is the room booking application landing page!</p>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="container">
+    <div class="row">
+        <div class="col" id="titleCopy">
+            <h1 id="portalTitle">Room Booking</h1>
+            &nbsp;
+            <p id="portalTitleCopy">
+                You may use this website to book a wide range of conference and meeting rooms. Please navigate to the Bookings page to book now!
+            </p>
+        </div>
+    </div>
 </div>
+
+<div class="container">
+    <div class="row" id="homePageTiles">
+        <div class="col homeTile">
+            <img class="homeImage" src="/images/booking.jpg">
+            <h4 class="tileHeader">Bookings</h4>
+            <p class="tileCopy">
+                Book a wide selection of meeting & conference rooms.
+            </p>
+            <a href="/bookings">
+                <button class="btn btn-primary homeButton" type="button">Bookings</button>
+            </a>
+        </div>
+        <div class="col homeTile">
+            <img class="homeImage" src="/images/room.jpg">
+            <h4 class="tileHeader">Rooms</h4>
+            <p class="tileCopy">
+                Unsure what rooms are available to book? Check available rooms and find out more about what they offer.
+            </p>
+            <a href="/rooms">
+                <button class="btn btn-primary homeButton" type="button">Rooms</button>
+            </a>
+        </div>
+        <div class="col homeTile">
+            <img class="homeImage" src="/images/admin.jpg">
+            <h4 class="tileHeader">Admin Portal</h4>
+            <p class="tileCopy">
+                The Admin Portal provides extra functionality to maintain and administer the application. Only Admin-level users can access this page.
+            </p>
+            <a href="/admin">
+                <button class="btn btn-primary homeButton" type="button">Admin</button>
+            </a>
+        </div>
+    </div>
+</div>
+

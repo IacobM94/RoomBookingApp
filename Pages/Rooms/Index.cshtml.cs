@@ -11,7 +11,7 @@ using RoomBookingApp.Models;
 
 namespace RoomBookingApp.Pages.Rooms
 {
-    [Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Administrator")]
     public class IndexModel : PageModel
     {
         private readonly RoomBookingApp.Data.ApplicationDbContext _context;

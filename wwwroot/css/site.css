@@ -63,9 +63,122 @@ body {
   margin-bottom: 60px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 40px; /* Vertically center the text there */
+    background-color: #efefef;
+}
+
+nav.navbar {
+    background-color: #F9C49A !important;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.nav-item {
+    height: 60px;
+    padding-top: 10px;
+    font-weight: 600;
+}
+
+.nav-item:hover {
+    background-color: #31859C;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+.border-right{
+    border-right: 2px solid black !important;
+    height: 40px;
+    margin-top: 12px;
+}
+
+.navbar-brand {
+    color: black;
+}
+
+#portalTitle {
+    color: #31859C;
+    font-family: "avant-garde-demi","Arial",sans-serif;
+    font-weight: 600;
+}
+
+#portalTitleCopy {
+    font-weight: 600;
+    font-family: "avant-garde-book","Arial",sans-serif;
+    color: #5d5d5d;
+}
+
+#titleCopy {
+    text-align: center;
+    font-family: "avant-garde-book","Arial",sans-serif;
+    margin-top: 15px;
+}
+
+.row#homePageTiles {
+    display: flex;
+    justify-content: center;
+}
+
+.homeTile {
+    height: 450px;
+    width: 30%;
+    margin: 1.66%;
+    background-color: #31859C;
+    color: white;
+    position: relative;
+    text-align: center;
+    font-family: "avant-garde-book","Arial",sans-serif;
+    padding: 0;
+}
+
+.homeTile:hover .homeButton {
+    background-color: #5d5d5d;
+    border-color: #5d5d5d;
+    color: white;
+}
+
+.homeTile:hover .tileHeader {
+    text-decoration: underline;
+}
+
+.homeImage {
+    height: 200px;
+    width: 100%;
+}
+
+.tileHeader {
+    font-family: "avant-garde-demi","Arial",sans-serif;
+    font-weight: 400;
+    padding-bottom: 10px;
+    margin-top: 5%;
+    transition: text-decoration 1s;
+}
+
+.tileCopy {
+    font-weight: 400;
+    position: absolute;
+    top: 60%;
+    padding-right: 4%;
+    padding-left: 4%;
+}
+
+.homeButton {
+    height: 40px;
+    width: 290px;
+    background-color: white;
+    color: #31859C;
+    font-weight: bold;
+    position: absolute;
+    top: 85%;
+    right: 7%;
+    transition: background-color 0.2s;
 }
