@@ -21,10 +21,33 @@ namespace RoomBookingApp.Pages.Bookings
             _context = context;
         }
 
+        public string DateSort { get; set; }
+        public string CurrentFilter { get; set; }
+        public string CurrentSort { get; set; }
+
         public IList<Booking> Booking { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
+            
+            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+
+            IQueryable<Booking> bookingsIQ = from b in _context.Bookings select b;
+
+            switch (sortOrder)
+            {
+                
+                case "Date":
+                    bookingsIQ = bookingsIQ.OrderBy(b => b.Date);
+                    break;
+                case "date_desc":
+                    bookingsIQ = bookingsIQ.OrderByDescending(b => b.Date);
+                    break;
+                default:
+                    bookingsIQ = bookingsIQ.OrderBy(b => b.Date);
+                    break;
+            }
+
             Booking = await _context.Bookings.Include(p => p.User).Where(a => a.User.UserName == User.Identity.Name).ToListAsync();
         }
     }
