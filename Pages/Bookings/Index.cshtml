@@ -2,25 +2,43 @@
 @model RoomBookingApp.Pages.Bookings.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Bookings";
 }
 
-<h1>Index</h1>
+
+<img class="banner" src="/images/in-session-banner.jpg">
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 id="banner-txt">
+                Bookings Manager
+            </h1>
+            <h5 id="banner-subtxt">
+                Create a booking or edit an existing one.
+            </h5>
+        </div>
+    </div>
+</div>
+
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="button">Create New</a>
 </p>
-<table class="table">
+
+<table class="styled-table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].UserID)
+                User
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Booking[0].RoomNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Booking[0].Date)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    @Html.DisplayNameFor(model => model.Booking[0].Date)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Booking[0].StartTime)
@@ -41,7 +59,7 @@
 @foreach (var item in Model.Booking) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.User.Id)
+                @Html.DisplayFor(modelItem => item.User.UserName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RoomNumber)
