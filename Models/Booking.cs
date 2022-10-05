@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace RoomBookingApp.Models
 {
@@ -13,6 +14,7 @@ namespace RoomBookingApp.Models
         public string UserID { get; set; }
         [Display(Name = "Room Number")]
         public int RoomNumber { get; set; }
+        [DataType(DataType.Date)]
         [Display(Name = "Date")]
         public DateTime Date { get; set; }
         [Display(Name = "Start Time")]

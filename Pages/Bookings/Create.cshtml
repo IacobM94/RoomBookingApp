@@ -7,49 +7,58 @@
 
 <h1>Create</h1>
 
-<h4>Booking</h4>
+<h5>Fill in the details below to create a booking.</h5>
 <hr />
-<div class="row">
+<div 
+    style='
+        background-color: #FFFFFF; 
+        box-shadow: 1px 2px 22px 0px rgba(89,87,87,0.85); 
+        margin: 10px; 
+        width: 1080px; 
+        height: 670px; 
+        border-radius: 20px'>
+<div class="row" style="padding:30px">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Booking.UserID" class="control-label"></label>
-                <input asp-for="Booking.UserID" class="form-control" />
+                <input asp-for="Booking.UserID" class="form-create" />
                 <span asp-validation-for="Booking.UserID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Booking.RoomNumber" class="control-label"></label>
-                <input asp-for="Booking.RoomNumber" class="form-control" />
+                <input asp-for="Booking.RoomNumber" class="form-create" />
                 <span asp-validation-for="Booking.RoomNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Booking.Date" class="control-label"></label>
-                <input asp-for="Booking.Date" class="form-control" />
+                <input asp-for="Booking.Date" class="form-create" />
                 <span asp-validation-for="Booking.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Booking.AllDayBooking" /> @Html.DisplayNameFor(model                       => model.Booking.AllDayBooking)
+                </label>
             </div>
             <div class="form-group">
                 <label asp-for="Booking.StartTime" class="control-label"></label>
-                <input asp-for="Booking.StartTime" class="form-control"/>
+                <input asp-for="Booking.StartTime" class="form-create"/>
                 <span asp-validation-for="Booking.StartTime" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Booking.EndTime" class="control-label"></label>
-                <input asp-for="Booking.EndTime" class="form-control"/>
+                <input asp-for="Booking.EndTime" class="form-create"/>
                 <span asp-validation-for="Booking.EndTime" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Booking.AllDayBooking" /> @Html.DisplayNameFor(model => model.Booking.AllDayBooking)
-                </label>
             </div>
             <div class="form-group">
                 <label asp-for="Booking.Subject" class="control-label"></label>
-                <input asp-for="Booking.Subject" class="form-control" />
+                <input asp-for="Booking.Subject" class="form-create" />
                 <span asp-validation-for="Booking.Subject" class="text-danger"></span>
             </div>
+            <hr />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="button" />
             </div>
         </form>
     </div>
@@ -58,7 +67,7 @@
 <div>
     <a asp-page="Index">Back to List</a>
 </div>
-
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
