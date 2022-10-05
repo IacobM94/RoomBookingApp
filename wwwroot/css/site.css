@@ -182,3 +182,9 @@ nav.navbar {
     right: 7%;
     transition: background-color 0.2s;
 }
+
+.table {
+    color: #5d5d5d;
+    font-weight: 400;
+    font-family: "avant-garde-demi","Arial",sans-serif;
+}
