@@ -8,7 +8,7 @@
 
 <img class="banner" src="/images/in-session-banner.jpg">
 
-<div class="container">
+<div class="container" width="100%">
     <div class="row">
         <div class="col">
             <h1 id="banner-txt">
@@ -26,7 +26,7 @@
     <a asp-page="Create" class="button">Create New</a>
 </p>
 
-<table class="styled-table">
+<table class="styled-table" width="100%">
     <thead>
         <tr>
             <th>
@@ -45,9 +45,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Booking[0].EndTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Booking[0].AllDayBooking)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Booking[0].Subject)
@@ -74,15 +71,12 @@
                 @Html.DisplayFor(modelItem => item.EndTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AllDayBooking)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Subject)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.BookingID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.BookingID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.BookingID">Delete</a>
+                <a class="btn btn-outline-success" asp-page="./Edit" asp-route-id="@item.BookingID">Edit</a> |
+                <a class="btn btn-outline-info" asp-page="./Details" asp-route-id="@item.BookingID">Details</a> |
+                <a class="btn btn-outline-danger" asp-page="./Delete" asp-route-id="@item.BookingID">Delete</a>
             </td>
         </tr>
 }

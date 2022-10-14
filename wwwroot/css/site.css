@@ -191,8 +191,8 @@ nav.navbar {
     margin: 5px 0;
     font-size: 0.98em;
     font-family: sans-serif;
-    min-width: 300px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .styled-table thead tr {
@@ -224,7 +224,7 @@ nav.navbar {
     background-color: #31859C;
     color: #FFFFFF;
     padding: 10px 15px 10px 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border: 0px solid #ced4da;
     border-radius: 10px;
     margin: 10px;
@@ -250,7 +250,7 @@ nav.navbar {
 }
 
 .banner {
-    width: 1098px;
+    width: 100%;
 }
 
 .form-create {
