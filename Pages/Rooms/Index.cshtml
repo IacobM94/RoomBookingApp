@@ -5,13 +5,26 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 id="portalTitle">Rooms</h1>
-<p id="portalTitleCopy">Below you may find a list of the Rooms registered in the system. You can create a new room if you are not able to find the one you are looking for.</p>
+<img class="banner" src="/images/conference-room.png" />
+
+<div class="container" width="100%">
+    <div class="row">
+        <div class="col">
+            <h1 id="banner-txt">
+                Rooms
+            </h1>
+            <h5 id="banner-subtxt">
+                Below you may find a list of the Rooms registered in the system. You can create a new room if you are not able to find the one you are looking for.
+            </h5>
+        </div>
+    </div>
+</div>
+
 
 <p>
-    <a class="btn btn-outline-primary" asp-page="Create">Create New</a>
+    <a class="button" asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<table class="styled-table" width="100%">
     <thead>
         <tr>
             <th>
@@ -47,3 +60,4 @@
 }
     </tbody>
 </table>
+<br />
