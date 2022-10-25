@@ -62,8 +62,14 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
+.pb-3 {
+    padding-bottom: 80px !important;
+}
+
 .footer {
-    position: absolute;
+    position: relative;
+    top: 60px;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
